@@ -1,0 +1,7 @@
+
+[Default Applications]
+x-scheme-handler/qdiffusion=qDiffusion-handler.desktop
+application/pdf=org.pwmt.zathura.desktop
+image/jpeg=nsxiv.desktop
+image/png=nsxiv.desktop
+inode/directory=nnn.desktop

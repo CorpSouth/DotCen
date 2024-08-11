@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# Automatically Hide the Xcursor
+
+xbanish -t 5 &
+
+# Background
+
+slate="#5D5D5D"
+xsetroot -solid "$slate" &
+
+# Dbus Daemon
+
+if test -z "$DBUS_SESSION_BUS_ADDRESS" ; then
+	eval "$(dbus-launch --exit-with-session --sh-syntax)"
+fi
+
+systemctl --user import-environment DISPLAY XAUTHORITY
+
+if command -v dbus-update-activation-environment >/dev/null 2>&1 ; then
+	dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
+
+# Mount Disks Automatically
+
+udiskie &
+
+# Notifications
+
+dunst &
+
+# Object Exchange (OBEX)
+# ISSUE: I can't start this with the systemctl command 
+# and I can't for the life of me figure out why...
+
+/usr/libexec/bluetooth/obexd &
+
+# Policy Kit
+
+mate-polkit &
+
+# Populate User Directories
+
+xdg-user-dirs-update &
+
+# Xresources
+
+xrdb -merge "$XRESOURCES" ;
+
+# Xsession
+
+exec startdwm.sh

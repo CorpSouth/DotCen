@@ -1,0 +1,89 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!TERM VARIABLE STAYS IN THIS FILE!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+xterm.termName: xterm-256color
+
+!!!!!!!!!!
+!!UXTerm!!
+!!!!!!!!!!
+
+UXTerm*allowBoldFonts:      true
+UXTerm*allowFontOps:        false
+UXTerm*allowMouseOps:       false
+UXTerm*allowWindowOps:      false
+UXTerm*charClass:           33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+UXTerm*cursorBlink:         true
+UXTerm*cursorOffTime:       700
+UXTerm*cursorOnTime:        700
+UXTerm*cursorUnderLine:     true
+UXTerm*decTerminalID:       vt382
+UXTerm*eightBitControl:     false
+UXTerm*eightBitInput:       false
+UXTerm*eightBitOutput:      false
+UXTerm*font:                -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso10646-1
+UXTerm*fullscreen:          never
+UXTerm*loginShell:          true
+UXTerm*metaSendsEscape:     true
+UXTerm*multiClickTime:      250
+UXTerm*multiScroll:         true
+UXTerm*omitTranslation:     popup-menu
+UXTerm*renderFont:          false
+UXTerm*reverseVideo:        false
+UXTerm*rightScrollbar:      false
+UXTerm*saveLines:           2000
+UXTerm*ScrollBar:           false
+UXTerm*scrollTtyOutput:     false
+UXTerm*selectToClipboard:   true
+UXTerm*title:               UXTerm
+UXTerm*trimSelection:       true
+UXTerm*ttyModes:            erase ^?
+UXTerm.vt100.dynamicColors: true
+UXTerm.vt100.translations:  #override \n\
+                            Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+                            Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+                            Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+                            <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+                            <Btn2Up>: insert-selection(PRIMARY)
+
+!!!!!!!!!
+!!XTerm!!
+!!!!!!!!!
+
+XTerm*allowBoldFonts:      true
+XTerm*allowFontOps:        false
+XTerm*allowMouseOps:       false
+XTerm*allowWindowOps:      false
+XTerm*charClass:           33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+XTerm*cursorBlink:         true
+XTerm*cursorOffTime:       700
+XTerm*cursorOnTime:        700
+XTerm*cursorUnderLine:     true
+XTerm*decTerminalID:       vt382
+XTerm*eightBitControl:     false
+XTerm*eightBitInput:       false
+XTerm*eightBitOutput:      false
+XTerm*font:                -xos4-terminus-medium-r-normal-*-14-140-72-72-c-80-iso10646-1
+XTerm*fullscreen:          never
+XTerm*loginShell:          true
+XTerm*metaSendsEscape:     true
+XTerm*multiClickTime:      250
+XTerm*multiScroll:         true
+XTerm*omitTranslation:     popup-menu
+XTerm*renderFont:          false
+XTerm*reverseVideo:        false
+XTerm*rightScrollbar:      false
+XTerm*saveLines:           2000
+XTerm*ScrollBar:           false
+XTerm*scrollTtyOutput:     false
+XTerm*selectToClipboard:   true
+XTerm*title:               XTerm
+XTerm*trimSelection:       true
+XTerm*ttyModes:            erase ^?
+XTerm.vt100.dynamicColors: true
+XTerm.vt100.translations:  #override \n\
+                           Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+                           Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+                           Shift <Btn1Up>: exec-formatted("xdg-open '%t'", PRIMARY) \n\
+                           <Btn1Up>: select-end(PRIMARY, CLIPBOARD, CUT_BUFFER0) \n\
+                           <Btn2Up>: insert-selection(PRIMARY)

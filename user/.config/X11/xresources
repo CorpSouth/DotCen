@@ -1,0 +1,10 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!Absolute-path split configuration!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# include "/home/aln/.config/X11/xresources.d/ifdef.xresources"
+# include "/home/aln/.config/X11/xresources.d/nsxiv.xresources"
+# include "/home/aln/.config/X11/xresources.d/xclock.xresources"
+# include "/home/aln/.config/X11/xresources.d/xcursor.xresources"
+# include "/home/aln/.config/X11/xresources.d/xft.xresources"
+# include "/home/aln/.config/X11/xresources.d/xterm.xresources"

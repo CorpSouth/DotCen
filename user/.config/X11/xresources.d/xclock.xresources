@@ -1,0 +1,6 @@
+!!!!!!!!!!!!!!!!!!!!
+!!Customize Xclock!!
+!!!!!!!!!!!!!!!!!!!!
+
+XClock*reverseVideo: true
+XClock*update:       1

@@ -1,0 +1,74 @@
+##### Sample Yashrc #####
+# This is a sample initialization script for yash. Copy this file to ~/.yashrc
+# and add your favorite customization to it.
+
+# Firstly, load the common customization script.
+# If you don't like settings applied in this script, remove this line.
+. --autoload --no-alias initialization/common
+
+# These are additional aliases that are not defined in the common script.
+# Uncomment to enable them.
+#alias g='grep'
+#alias l='$PAGER'
+#alias --global L='|$PAGER'
+#alias --global N='>/dev/null 2>&1' N1='>/dev/null' N2='2>/dev/null'
+
+# Uncomment if you want to clear the screen with Ctrl-L.
+bindkey --emacs '\^L' clear-and-redraw-all
+bindkey --vi-insert '\^L' clear-and-redraw-all
+bindkey --vi-command '\^L' clear-and-redraw-all
+
+# Uncomment to enable direnv support. (jq required)
+#_update_direnv() {
+#  eval "$(
+#    direnv export json |
+#    jq -r 'to_entries | .[] |
+#    if .value == null then
+#      @sh "unset \(.key)"
+#    else
+#      @sh "export \(.key)=\(.value)"
+#    end'
+#  )"
+#}
+#_update_direnv
+#YASH_AFTER_CD=("$YASH_AFTER_CD" '_update_direnv')
+
+# And add your own customization below.
+
+# Extract archives
+
+extract ()
+{
+  if [ -f "$1" ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf "$1"   ;;
+      *.tar.gz)    tar xzf "$1"   ;;
+      *.bz2)       bunzip2 "$1"   ;;
+      *.rar)       unrar x "$1"   ;;
+      *.gz)        gunzip "$1"    ;;
+      *.tar)       tar xf "$1"    ;;
+      *.tbz2)      tar xjf "$1"   ;;
+      *.tgz)       tar xzf "$1"   ;;
+      *.zip)       unzip "$1"     ;;
+      *.Z)         uncompress "$1" ;;
+      *.7z)        7z x "$1"      ;;
+      *.deb)       ar x "$1"      ;;
+      *.tar.xz)    tar xf "$1"    ;;
+      *.tar.zst)   unzstd "$1"    ;;
+      *)           echo  "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+# System Fetch
+if [ -x "/usr/bin/fastfetch" ]; then
+	fastfetch
+  elif [ -x "/usr/bin/pfetch" ]; then
+        PF_INFO="ascii title de editor host kernel memory os pkgs shell uptime wm palette" pfetch
+  else
+	uname -a
+fi;
+
+# vim: set et sw=2 sts=2 tw=78 ft=sh:

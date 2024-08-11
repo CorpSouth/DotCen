@@ -1,0 +1,8 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!Neo-Simple X11 Image Viewer!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Nsxiv.bar.background: white
+Nsxiv.bar.foreground: black
+Nsxiv.bar.font: Terminus-14
+Nsxiv.window.background: black

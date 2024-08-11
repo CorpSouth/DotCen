@@ -1,0 +1,9 @@
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!Let the colors speak for themselves!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+#ifdef COLOR
+
+       *customization: -color
+
+#endif
