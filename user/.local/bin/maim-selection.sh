@@ -1,14 +1,18 @@
 #!/bin/sh
 
-# Captures and saves screenshot to preferred directory (selected area)
-
+# Captures and saves screenshot to preferred directory (selected area).
 SAVEAS="$(date +%c)-maim.png"
-SCREENSHOTSDIR="$HOME/Pictures/Screenshots/"
+SAVETO="$HOME/Pictures/Screenshots/"
 
-# Create screenshots directory if it doesn't already exist
+# Use this to prevent notification clutter.
+MAIM_TAG="MAIM_TAG"
 
-if [ ! -d "$SCREENSHOTSDIR" ] ; then
-    	mkdir -p "$SCREENSHOTSDIR" ;
+# Create screenshots directory if it doesn't already exist.
+if [ ! -d "$SAVETO" ] ; then
+    	mkdir -p "$SAVETO" ;
 fi;
 
-maim -s "$SCREENSHOTSDIR/$SAVEAS" -u
+# Capture the screenshot, then send a carefully delayed notification.
+maim -s "$SAVETO/$SAVEAS" -u && \
+sleep 0.005 && \
+dunstify "Screenshot Taken" "(Selected Area)" -h string:x-dunst-stack-tag:"$MAIM_TAG" -t 1000

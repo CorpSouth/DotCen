@@ -1,14 +1,18 @@
 #!/bin/sh
 
 # Captures and saves screenshot to preferred directory (full window)
-
 SAVEAS="$(date +%c)-maim.png"
-SCREENSHOTSDIR="$HOME/Pictures/Screenshots/"
+SAVETO="$HOME/Pictures/Screenshots/"
+
+# Use this to prevent notification clutter
+MAIM_TAG="MAIM_TAG"
 
 # Create screenshots directory if it doesn't already exist
-
-if [ ! -d "$SCREENSHOTSDIR" ] ; then
-    	mkdir -p "$SCREENSHOTSDIR" ;
+if [ ! -d "$SAVETO" ] ; then
+    	mkdir -p "$SAVETO" ;
 fi;
 
-maim -i "$(xdotool getactivewindow)" "$SCREENSHOTSDIR/$SAVEAS" -u
+# Capture the screenshot, then send a carefully delayed notification.
+maim -i "$(xdotool getactivewindow)" "$SAVETO/$SAVEAS" -u && \
+sleep 0.005 && \
+dunstify "Screenshot Taken" "(Full Window)" -h string:x-dunst-stack-tag:"$MAIM_TAG" -t 1000
