@@ -62,7 +62,15 @@ extract ()
   fi
 }
 
+FZF_DEFAULT_OPTS="--border=sharp \
+                  --color=bg:#000000,fg:#BFBFBF,bg+:#666666,border:#666666,fg+:#000000,gutter:#666666,header:#0000FF \
+                  --color=hl:#BFBFBF,hl+:#E5E500,info:#999900,marker:#00D900,pointer:#E50000,preview-bg:#000000 \
+                  --color=preview-fg:#BFBFBF,prompt:#00A6B2,spinner:#E5E5E5 \
+                  --no-unicode \
+                  --reverse"
+
 # System Fetch
+
 if [ -x "/usr/bin/fastfetch" ]; then
 	fastfetch
   elif [ -x "/usr/bin/pfetch" ]; then
