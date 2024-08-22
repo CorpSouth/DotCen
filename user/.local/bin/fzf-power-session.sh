@@ -45,23 +45,23 @@ case "$MENU" in
        ;;
                esac
        ;;
-	        "Reboot" )
-	           case "$CONFIRM" in
-	                   "Yes" ) systemctl reboot
-	   ;;
-	                   "No" ) exit 1
+	     "Reboot" )
+	        case "$CONFIRM" in
+	                "Yes" ) systemctl reboot
        ;;
-	                   "Back" ) exec "$0"
-	   ;;
-	           esac
+	                "No" ) exit 1
        ;;
-	        "Suspend" )
-	           case "$CONFIRM" in
-	                   "Yes" ) systemctl suspend -i
+	                "Back" ) exec "$0"
        ;;
-	                   "No" ) exit 1
+	        esac
        ;;
-	                   "Back" ) exec "$0"
+	      "Suspend" )
+	        case "$CONFIRM" in
+	                "Yes" ) systemctl suspend -i
+       ;;
+	                "No" ) exit 1
+       ;;
+	                "Back" ) exec "$0"
        ;;
 	           esac
        ;;
