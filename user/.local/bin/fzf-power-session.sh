@@ -55,7 +55,7 @@ case "$MENU" in
        ;;
 	       esac
        ;;
-	      "Suspend" )
+	     "Suspend" )
 	       case "$CONFIRM" in
 	              "Yes" ) systemctl suspend -i
        ;;
