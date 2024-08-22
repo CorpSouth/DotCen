@@ -63,7 +63,7 @@ case "$MENU" in
        ;;
 	                "Back" ) exec "$0"
        ;;
-	           esac
+	        esac
        ;;
 esac
 
