@@ -11,7 +11,7 @@ case "$CHOOSE" in
 		echo "Are You Sure You Want to Lock Your Screen?"
 			read -r "CONFIRMATION"
 				if [ "$CONFIRMATION" = "YES" ] ; then
-					xscreensaver-command -lock >/dev/null 2>&1
+					slock >/dev/null 2>&1
 				fi
 														;;
      "Log Out" )
@@ -19,26 +19,26 @@ case "$CHOOSE" in
 			read -r "CONFIRMATION"
 				if [ "$CONFIRMATION" = "YES" ] ; then
 					pkill -x Xorg >/dev/null 2>&1
-     			fi
+     			        fi
 														;;
 	"Power Off" )
      	echo "Are You Sure You Want to Shut Down?"
      		read -r "CONFIRMATION"
-     			if [ "$CONFIRMATION" = "YES" ] ; then
-     				systemctl poweroff >/dev/null 2>&1
-     			fi
+     			        if [ "$CONFIRMATION" = "YES" ] ; then
+     				        systemctl poweroff >/dev/null 2>&1
+     			        fi
 														;;
 	"Reboot" )
      	echo "Are You Sure You Want to Reboot?"
      		read -r "CONFIRMATION"
-     			if [ "$CONFIRMATION" = "YES" ] ; then
+     			        if [ "$CONFIRMATION" = "YES" ] ; then
      				systemctl reboot >/dev/null 2>&1
-     			fi
+     			        fi
 														;;
 	"Suspend" )
      	echo "Are You Sure You Want to Suspend?"
      		read -r "CONFIRMATION"
-     			if [ "$CONFIRMATION" = "YES" ] ; then
+     			        if [ "$CONFIRMATION" = "YES" ] ; then
 					systemctl suspend -i >/dev/null 2>&1
 				fi
 														;;
