@@ -17,53 +17,53 @@ CONFIRM="$(printf 'Yes\nNo\nBack' | fzf --border-label='Proceed?' --disabled --i
 case "$MENU" in
              "Lock Screen" )
                case "$CONFIRM" in
-                       "Yes" ) echo "Currently Locking Your Screen" ; slock 
+                      "Yes" ) echo "Currently Locking Your Screen" ; slock 
        ;;
-                       "No" ) exit 1
+                      "No" ) exit 1
        ;;
-                       "Back" ) exec "$0"
+                      "Back" ) exec "$0"
        ;;
                esac
        ;;
              "Log Out" )
                case "$CONFIRM" in
-                       "Yes" ) pkill -x Xorg
+                      "Yes" ) pkill -x Xorg
        ;;
-                       "No" ) exit 1
+                      "No" ) exit 1
        ;;
-                       "Back" ) exec "$0"
+                      "Back" ) exec "$0"
        ;;
                esac
        ;;
              "Power Off" )
                case "$CONFIRM" in
-                       "Yes" ) systemctl poweroff
+                      "Yes" ) systemctl poweroff
        ;;
-                       "No" ) exit 1
+                      "No" ) exit 1
        ;;
-                       "Back" ) exec "$0"
+                      "Back" ) exec "$0"
        ;;
                esac
        ;;
-	      "Reboot" )
-	        case "$CONFIRM" in
-	                "Yes" ) systemctl reboot
+	     "Reboot" )
+	       case "$CONFIRM" in
+	              "Yes" ) systemctl reboot
        ;;
-	                "No" ) exit 1
+	              "No" ) exit 1
        ;;
-	                "Back" ) exec "$0"
+	              "Back" ) exec "$0"
        ;;
-	        esac
+	       esac
        ;;
 	      "Suspend" )
-	        case "$CONFIRM" in
-	                "Yes" ) systemctl suspend -i
+	       case "$CONFIRM" in
+	              "Yes" ) systemctl suspend -i
        ;;
-	                "No" ) exit 1
+	              "No" ) exit 1
        ;;
-	                "Back" ) exec "$0"
+	              "Back" ) exec "$0"
        ;;
-	        esac
+	       esac
        ;;
 esac
 
