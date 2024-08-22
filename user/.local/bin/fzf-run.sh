@@ -1,8 +1,12 @@
 #!/bin/sh
 
-# We don't want multiple terminal instances running the same exact script.
+# This allows us to back out gracefully when hitting the escape key
+set -e
+
+# We don't want multiple instances of the same exact script
 pidof -x -o $$ "$(basename "$0")" && exit 1
 
+# In-Field Separator
 IFS=':'
 
 get_selection() {
