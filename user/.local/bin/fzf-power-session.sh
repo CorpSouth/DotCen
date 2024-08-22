@@ -15,7 +15,7 @@ CONFIRM="$(printf 'Yes\nNo\nBack' | fzf --border-label='Proceed?' --disabled --i
 # Yes means proceed, No exits the script, and Back will return you to the previous menu.
 # Editing any of the list choices below will require modifying the printf string above. 
 case "$MENU" in
-           	"Lock Screen" )
+             "Lock Screen" )
                case "$CONFIRM" in
                        "Yes" ) echo "Currently Locking Your Screen" ; slock 
        ;;
@@ -25,7 +25,7 @@ case "$MENU" in
        ;;
                esac
        ;;
-            "Log Out" )
+             "Log Out" )
                case "$CONFIRM" in
                        "Yes" ) pkill -x Xorg
        ;;
@@ -35,7 +35,7 @@ case "$MENU" in
        ;;
                esac
        ;;
-            "Power Off" )
+             "Power Off" )
                case "$CONFIRM" in
                        "Yes" ) systemctl poweroff
        ;;
@@ -45,7 +45,7 @@ case "$MENU" in
        ;;
                esac
        ;;
-	     "Reboot" )
+	      "Reboot" )
 	        case "$CONFIRM" in
 	                "Yes" ) systemctl reboot
        ;;
