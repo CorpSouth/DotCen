@@ -13,37 +13,37 @@ case "$CHOOSE" in
 				if [ "$CONFIRMATION" = "YES" ] ; then
 					slock >/dev/null 2>&1
 				fi
-														;;
-     "Log Out" )
+	        ;;
+                "Log Out" )
 		echo "Are You Sure You Want to Log Out?"
 			read -r "CONFIRMATION"
 				if [ "$CONFIRMATION" = "YES" ] ; then
 					pkill -x Xorg >/dev/null 2>&1
      			        fi
-														;;
-	"Power Off" )
-     	echo "Are You Sure You Want to Shut Down?"
-     		read -r "CONFIRMATION"
+		;;
+                "Power Off" )
+     	        echo "Are You Sure You Want to Shut Down?"
+     		        read -r "CONFIRMATION"
      			        if [ "$CONFIRMATION" = "YES" ] ; then
      				        systemctl poweroff >/dev/null 2>&1
      			        fi
-														;;
-	"Reboot" )
-     	echo "Are You Sure You Want to Reboot?"
+		;;
+	        "Reboot" )
+     	        echo "Are You Sure You Want to Reboot?"
      		read -r "CONFIRMATION"
      			        if [ "$CONFIRMATION" = "YES" ] ; then
      				systemctl reboot >/dev/null 2>&1
      			        fi
-														;;
-	"Suspend" )
-     	echo "Are You Sure You Want to Suspend?"
+		;;
+	        "Suspend" )
+     	        echo "Are You Sure You Want to Suspend?"
      		read -r "CONFIRMATION"
      			        if [ "$CONFIRMATION" = "YES" ] ; then
 					systemctl suspend -i >/dev/null 2>&1
 				fi
-														;;
-     		*)
-      													;;
+		;;
+     		        *)
+      		;;
 esac
 
 
