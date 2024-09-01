@@ -23,23 +23,7 @@ export LESSHISTFILE="/dev/null"
 # Fzf Default Options
 
 export FZF_DEFAULT_OPTS="--border=sharp \
-                         --color=bg:#000000 \
-                         --color=fg:#C0C0C0 \
-                         --color=bg+:#808080 \
-                         --color=border:#808080 \
-                         --color=fg+:#000000 \
-                         --color=gutter:#808080 \
-                         --color=header:#0000FF \
-                         --color=hl:#808000 \
-                         --color=hl+:#FFFF00 \
-                         --color=info:#808000 \
-                         --color=marker:#00FFFF \
-                         --color=pointer:#FF0000 \
-                         --color=preview-bg:#000000 \
-                         --color=preview-fg:#C0C0C0 \
-                         --color=prompt:#00FF00 \
-                         --color=spinner:#FF00FF \
-                         --no-unicode \
+                         --color=16 \
                          --reverse"
 
 # PATH
